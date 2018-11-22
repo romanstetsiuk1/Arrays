@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Main {
 
     private static void printArray(int[] array) {
@@ -36,6 +38,17 @@ public class Main {
         return newArray;
     }
 
+    //    create array by N size with random value from X to Y
+    private static int[] randomArray(int size, int randomFrom, int randomTo) {
+        int[] newArray = new int[size];
+        Random randomGenerator = new Random();
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = randomGenerator.nextInt(randomTo - randomFrom + 1) + randomFrom;
+        }
+        printArray(newArray);
+        return newArray;
+    }
+
     public static void main(String[] args) {
 
         int[] array1 = new int[]{21, 3, 2, 43, 5, 76, 89, 100, 1, -8};
@@ -57,6 +70,11 @@ public class Main {
         System.out.println("\nTest for method - newArray");
         newArray(15);
         newArray(8);
+
+        System.out.println("\nTest for method - randomArray");
+        randomArray(100, 0, 1);
+        randomArray(20, -20, 20);
+        randomArray(50, 0, 100);
 
     }
 
