@@ -14,13 +14,23 @@ public class Main {
         array[x] = tmp;
     }
 
-    //    Create array with N size, and print in descending order
+    //    Create array by N size, and print in descending order
     private static int[] createArrayInDescendingOrder(int size) {
         int newArray[] = new int[size];
         int counter = 0;
         for (int i = newArray.length - 1; i >= 0; i--) {
             newArray[counter] = i;
             counter++;
+        }
+        printArray(newArray);
+        return newArray;
+    }
+
+    //    Create array by N size, from 0 to N-1
+    private static int[] newArray(int size) {
+        int[] newArray = new int[size];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = i;
         }
         printArray(newArray);
         return newArray;
@@ -43,6 +53,10 @@ public class Main {
         createArrayInDescendingOrder(10);
         createArrayInDescendingOrder(21);
         createArrayInDescendingOrder(5);
+
+        System.out.println("\nTest for method - newArray");
+        newArray(15);
+        newArray(8);
 
     }
 
