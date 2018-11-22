@@ -49,9 +49,28 @@ public class Main {
         return newArray;
     }
 
+    //    Sum elements of arrays with same length
+    private static int[] sumArraysSameLength(int[] array1, int[] array2) {
+        int array1Length = array1.length;
+        int array2Length = array2.length;
+        int[] resultArray = new int[array1Length];
+        if (array1Length != array2Length) {
+            System.out.println("Length of arrays is different");
+            return new int[]{0};
+        }
+        for (int i = 0; i < array1Length; i++) {
+            resultArray[i] = array1[i] + array2[i];
+        }
+        printArray(resultArray);
+        return resultArray;
+    }
+
     public static void main(String[] args) {
 
         int[] array1 = new int[]{21, 3, 2, 43, 5, 76, 89, 100, 1, -8};
+
+        int[] array2 = new int[]{0,2,5,8,9};
+        int[] array3 = new int[]{1,7,9,-95,13};
 
         System.out.println("\nTest for method - printArray");
         printArray(array1);
@@ -75,6 +94,10 @@ public class Main {
         randomArray(100, 0, 1);
         randomArray(20, -20, 20);
         randomArray(50, 0, 100);
+
+        System.out.println("\nTest for method - sumArraysSameLength");
+        sumArraysSameLength(array2,array3);
+        sumArraysSameLength(array1,array2);
 
     }
 
